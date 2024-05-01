@@ -3,10 +3,6 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-
-@app.route('/shao', methods=["POST"])
-def shao_mundo():
-    return 'Shao Mundo'
     
 @app.route('/hola', methods=["POST"])
 def hola_mundo():
