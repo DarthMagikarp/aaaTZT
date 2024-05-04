@@ -1,16 +1,12 @@
-import logging
-import azure.functions as func
-import json
+from flask import Flask
+from flask_cors import CORS
 
-def main(req: func.HttpRequest) -> func.HttpResponse:
-    logging.info('Python HTTP trigger function processed a request.')
-    print("print de prueba")
+app = Flask(__name__)
+CORS(app)
+    
+@app.route('/', methods=["POST"])
+def hola_mundo():
+    return 'Hola Mundo'
 
-    # Verificar si la solicitud es un POST
-    if req.method == 'POST':
-        try:
-            # Leer el cuerpo de la solicitud
-            req_body = req.get_json()
-
-            # Realizar acciones basadas en los datos recibidos
-            # Por ejemplo, guardar los datos en una base de datos, procesarlos, envi
+if __name__ == '__main__':
+    app.run(debug=True)
