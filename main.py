@@ -6,7 +6,7 @@ CORS(app)
     
 @app.route('/', methods=["POST"])
 def hola_mundo():
-    return 'Hola Mundo'
+    return 'Hola Mundo!!'
 
 if __name__ == '__main__':
     app.run(debug=True)
